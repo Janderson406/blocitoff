@@ -12,7 +12,15 @@ group :development do
   gem 'sqlite3'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
+gem 'devise'
+
 gem 'bootstrap-sass'
+
+gem 'figaro', '1.0'
 
 
 # Use SCSS for stylesheets
