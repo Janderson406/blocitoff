@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Devise mailer setup for Heroku
+  config.action_mailer.default_url_options = { :host => 'rocky-everglades-55496.herokuapp.com' }
+  
 end
