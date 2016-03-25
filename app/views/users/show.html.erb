@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+
+<h2><%= current_user.username %></h2> </br>
+
+<%= current_user.email %> </br>
+
+
+Active Since <%= current_user.created_at.strftime("%m-%d-%Y") %>
