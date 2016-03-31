@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @items = @user.items
+    @item = Item.new #need to pull Item for partial view
   end
 
 end

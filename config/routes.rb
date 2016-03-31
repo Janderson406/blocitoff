@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'items/create'
-
-  get 'users/show'
-
   devise_for :users
 
   resources :users, only: [:show] do
@@ -11,6 +7,8 @@ Rails.application.routes.draw do
   end
 
   get 'about' => 'welcome#about'
+  get 'items/create'
+  get 'users/show' #still cannot get route to function without this?
 
   root 'welcome#index'
 end

@@ -1,8 +1,11 @@
-=begin
-
 require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
+  before do
+    user = User.create(username: "Tester", email: "test@testy.com", password: "helloworld", password_confirmation: "helloworld")
+    user.confirm
+    sign_in user
+  end
 
   let(:my_item) { Item.create!(name: "New to-do task item") }
 
@@ -18,9 +21,7 @@ RSpec.describe ItemsController, type: :controller do
 
     it "redirects to the new item" do
       post :create, item: {name: "New to-do task item"}
-      expect(response).to redirect_to Item.last
+      expect(response).to redirect_to User.last
     end
   end
 end
-
-=end
