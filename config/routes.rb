@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'items/create'
+
   get 'users/show'
 
   devise_for :users
@@ -10,5 +12,5 @@ Rails.application.routes.draw do
 
   get 'about' => 'welcome#about'
 
-  root to: 'welcome#index'
+  root 'welcome#index'
 end
