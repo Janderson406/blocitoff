@@ -2,5 +2,6 @@
   <span class="badge">
     <%= item.created_at.strftime("%m. %d. %Y") %>
   </span>
-    <%= item.name %>
+    <%= link_to "", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok' %> &nbsp; <%= item.name %>
+
 </li>
