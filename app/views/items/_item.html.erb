@@ -1,6 +1,8 @@
-<li class="list-group-item">
-  <span class="badge">
-    <%= item.created_at.strftime("%m. %d. %Y") %>
-  </span>
-    <%= item.name %>
-</li>
+<%= content_tag :div, class: 'media', id: "item-#{item.id}" do%>
+  <li class="list-group-item">
+    <span class="badge">
+      <%= item.created_at.strftime("%m. %d. %Y") %>
+    </span>
+    <%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %> &nbsp; <%= item.name %>
+  </li>
+<% end %>

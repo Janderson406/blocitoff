@@ -1,9 +1,10 @@
 <div class="well well-lg">
   <h3><%= current_user.username %>'s To-Do List</h3> </br>
 </div>
-
+  <div class='js-items'>
   <%= render partial: "/items/form", locals: { user: @user, item: @item } %> </br>
   <%= render @items %>
+ </div>
   </br>
     <div class="panel panel-footer">
       <%= current_user.email %> </br>
