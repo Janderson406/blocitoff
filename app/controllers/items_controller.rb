@@ -10,17 +10,23 @@ class ItemsController < ApplicationController
       flash.now[:alert] = "There was an error saving the to-do item. Please try again."
       redirect_to user_path(current_user)
     end
+
   end
 
   def destroy
     @item = Item.find(params[:id])
 
     if @item.destroy
-      flash[:notice] = "\"#{@item.name}\" was taken off the list."
-      redirect_to user_path(current_user)
+      flash.now[:notice] = "\"#{@item.name}\" is now complete!"
+
     else
       flash.now[:alert] = "There was an error removing the to-do item."
-      redirect_to user_path(current_user)
+
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
