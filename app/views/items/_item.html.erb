@@ -1,7 +1,7 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do%>
   <li class="list-group-item">
     <span class="badge">
-      <%= item.created_at.strftime("%m. %d. %Y") %>
+      <%= distance_of_time_in_words(item.created_at, Time.now-7.days)%> remaining
     </span>
     <%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %> &nbsp; <%= item.name %>
   </li>
