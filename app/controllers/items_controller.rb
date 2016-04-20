@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
       flash.now[:alert] = "There was an error saving the to-do item. Please try again."
       redirect_to user_path(current_user)
     end
-
   end
 
   def destroy
@@ -18,10 +17,8 @@ class ItemsController < ApplicationController
 
     if @item.destroy
       flash.now[:notice] = "\"#{@item.name}\" is now complete!"
-
     else
       flash.now[:alert] = "There was an error removing the to-do item."
-
     end
 
     respond_to do |format|
