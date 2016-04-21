@@ -1,7 +1,11 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do%>
   <li class="list-group-item">
     <span class="badge">
-      <%= distance_of_time_in_words(item.created_at, Time.now-7.days)%> remaining
+      <% if Time.now-item.created_at <= 7.days%>
+        <%= distance_of_time_in_words(item.created_at, Time.now-7.days) %> remaining
+      <%else%>
+        item has expired!
+      <%end%>
     </span>
     <%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %> &nbsp; <%= item.name %>
   </li>
