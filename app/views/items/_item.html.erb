@@ -7,6 +7,6 @@
         item has expired!
       <%end%>
     </span>
-    <%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %> &nbsp; <%= item.name %>
+    <%= link_to " done", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %> &nbsp; <%= item.name %>
   </li>
 <% end %>
